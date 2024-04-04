@@ -1,0 +1,90 @@
+#!/usr/bin/env sh
+#
+# Copyright (c) 2024 Oray Inc. All rights reserved.
+#
+# No Part of this file may be reproduced, stored
+# na retrieval system, or transmitted, in any form, or by any means,
+# electronic, mechanical, photocopying, recording, or otherwise,
+# without the prior consent of Oray Inc.
+#
+# @author wuwenze
+#
+
+sudo yabai --load-sa
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+
+# 全局设置
+yabai -m config external_bar all:0:35
+yabai -m config mouse_follows_focus          off
+yabai -m config focus_follows_mouse          off
+yabai -m config window_origin_display        default
+yabai -m config window_placement             second_child
+yabai -m config window_topmost               off
+yabai -m config window_shadow                on
+yabai -m config window_opacity               off
+yabai -m config window_opacity_duration      1000.0
+yabai -m config active_window_opacity        1.0
+yabai -m config normal_window_opacity        0.75
+yabai -m config window_border                off
+yabai -m config window_border_width          0
+yabai -m config active_window_border_color   0xff775759
+yabai -m config normal_window_border_color   0xff555555
+yabai -m config insert_feedback_color        0xffd75f5f
+yabai -m config split_ratio                  0.50
+yabai -m config auto_balance                 on
+yabai -m config mouse_modifier               fn
+yabai -m config mouse_action1                move
+yabai -m config mouse_action2                resize
+yabai -m config mouse_drop_action            swap
+
+# general space settings
+yabai -m config layout                       bsp
+yabai -m config top_padding                  5
+yabai -m config bottom_padding               5
+yabai -m config left_padding                 5
+yabai -m config right_padding                5
+yabai -m config window_gap                   5
+yabai -m config window_animation_duration    0.00
+
+
+
+# 不受影响的窗口
+yabai -m rule --add app="^系统设置$" manage=off
+yabai -m rule --add app="^访达$" manage=off
+yabai -m rule --add app="^微信$" manage=off
+yabai -m rule --add app="^企业微信$" manage=off
+yabai -m rule --add app="^Mac Mouse Fix$" manage=off
+yabai -m rule --add app="^Step Two$" manage=off
+yabai -m rule --add app="^日历$" manage=off
+yabai -m rule --add app="^Tencent Lemon$" manage=off
+yabai -m rule --add app="^网易云音乐$" manage=off
+yabai -m rule --add app="^计算器$" manage=off
+yabai -m rule --add app="^Clash Verge$" manage=off
+yabai -m rule --add app="^QuickTime Player$" manage=off
+yabai -m rule --add app="^贝锐向日葵$" manage=off
+yabai -m rule --add app="^贝锐蒲公英$" manage=off
+yabai -m rule --add app="^花生壳$" manage=off
+yabai -m rule --add app="^字体册$" manage=off
+yabai -m rule --add app="^Keka$" manage=off
+yabai -m rule --add app="^归档实用工具$" manage=off
+yabai -m rule --add app="^便笺$" manage=off
+yabai -m rule --add app="^uTools$" manage=off
+yabai -m rule --add app="^iStat Menus$" manage=off
+yabai -m rule --add app="^文本编辑$" manage=off
+
+
+JB_Apps='^(CLion|PyCharm|IntelliJ IDEA|GoLand|DataGrip$$)$'
+yabai -m rule --add app="${JB_Apps}" manage=off
+# If `Open last project when launch` is checked, add this rule. And make sure `always show project path` is also checked.
+yabai -m rule --add app="${JB_Apps}" title=".*\[.*\].*" manage=on
+yabai -m rule --add app="${JB_Apps}" title="^$"  manage=on
+
+# ~/.config/yabai/scripts/padding.sh
+# yabai -m signal --add event=window_created action="~/.config/yabai/scripts/padding.sh"
+# yabai -m signal --add event=window_destroyed action="~/.config/yabai/scripts/padding.sh"
+# yabai -m signal --add event=window_moved action="~/.config/yabai/scripts/padding.sh"
+# yabai -m signal --add event=space_changed action="~/.config/yabai/scripts/padding.sh"
+# yabai -m signal --add event=display_added action="~/.config/yabai/scripts/padding.sh"
+# yabai -m signal --add event=display_removed action="~/.config/yabai/scripts/padding.sh"
+
+echo "yabai configuration loaded.."
