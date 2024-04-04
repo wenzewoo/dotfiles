@@ -1,0 +1,9 @@
+[user]
+	name = wuwenze
+	email = wuwenze@oray.com
+[core]
+	autocrlf = input
+[http]
+	sslVerify = false
+[https]
+	sslVerify = false

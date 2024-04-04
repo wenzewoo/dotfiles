@@ -1,4 +1,3 @@
 /kube/
-/mvn/
-/git/
+/mvn/settings-oray.xml
 .DS_Store
