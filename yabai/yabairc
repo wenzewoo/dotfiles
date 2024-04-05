@@ -1,15 +1,4 @@
 #!/usr/bin/env sh
-#
-# Copyright (c) 2024 Oray Inc. All rights reserved.
-#
-# No Part of this file may be reproduced, stored
-# na retrieval system, or transmitted, in any form, or by any means,
-# electronic, mechanical, photocopying, recording, or otherwise,
-# without the prior consent of Oray Inc.
-#
-# @author wuwenze
-#
-
 sudo yabai --load-sa
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 
@@ -17,7 +6,7 @@ yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 yabai -m config external_bar all:0:35
 yabai -m config mouse_follows_focus          off
 yabai -m config focus_follows_mouse          off
-yabai -m config window_origin_display        default
+#yabai -m config window_origin_display        default
 yabai -m config window_placement             second_child
 yabai -m config window_topmost               off
 yabai -m config window_shadow                on

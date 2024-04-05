@@ -1,4 +1,3 @@
-# zsh
 ln -s "${HOME}/Public/dotfiles/zsh/zshrc" "${HOME}/.zshrc"
 
 # https://github.com/koekeishiya/skhd
@@ -9,6 +8,7 @@ ln -s "${HOME}/Public/dotfiles/yabai" "${HOME}/.config/yabai"
 ln -s "${HOME}/Public/dotfiles/sketchybar" "${HOME}/.config/sketchybar"
 
 ln -s "${HOME}/Public/dotfiles/nvim" "${HOME}/.config/nvim"
+ln -s "${HOME}/Public/dotfiles/kitty" "${HOME}/.config/kitty"
 
 # Private
 ln -s "${HOME}/Public/dotfiles/kube" "${HOME}/.kube"
