@@ -70,6 +70,7 @@ export ICON_LOCK=󰌾
 # export ICONS_SPACE=(󰎤 󰎧 󰎪 󰎭 󰎱 󰎳 󰎶)
 export ICONS_SPACE=(1 2 3 4 5 6 7 8 9 10)
 
+export ICON_BLANK=󰢤
 export ICON_APP=󰣆 # fallback app
 export ICON_TERM=󰆍 # fallback terminal app, terminal, warp, iterm2
 export ICON_PACKAGE=󰏓 # brew
@@ -78,12 +79,15 @@ export ICON_FILE=󰉋 # ranger, finder
 export ICON_GIT=󰊢 # lazygit
 export ICON_LIST=󱃔 # taskwarrior, taskwarrior-tui, reminders, onenote
 export ICON_SCREENSAVOR=󱄄 # unimatrix, pipe.sh
+export ICON_CODE=󰨞
+export ICON_DOCKER=
 
 export ICON_WEATHER=󰖕 # weather
 export ICON_MAIL=󰇮 # mail, outlook
 export ICON_CALC=󰪚 # calculator, numi
 export ICON_MAP=󰆋 # maps, find my
 export ICON_MICROPHONE=󰍬 # voice memos
+export QYWEIXIN=󱐒
 export ICON_CHAT=󰍩 # messages, slack, teams, discord, telegram
 export ICON_VIDEOCHAT=󰍫 # facetime, zoom, webex
 export ICON_NOTE=󱞎 # notes, textedit, stickies, word, bat
@@ -104,6 +108,7 @@ export ICON_PRESENT=󰈩 # powerpoint
 export ICON_CLOUD=󰅧 # onedrive
 export ICON_PEN=󰏬 # curve
 export ICON_REMOTEDESKTOP=󰢹 # vmware, utm
+export ICON_CHROME=󰊯
 
 export ICON_CLOCK= # clock, timewarrior, tty-clock
 export ICON_CALENDAR=󰃭 # calendar

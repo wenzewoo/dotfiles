@@ -60,6 +60,7 @@ yabai -m rule --add app="^便笺$" manage=off
 yabai -m rule --add app="^uTools$" manage=off
 yabai -m rule --add app="^iStat Menus$" manage=off
 yabai -m rule --add app="^文本编辑$" manage=off
+yabai -m rule --add app="^爱奇艺$" manage=off
 
 
 JB_Apps='^(CLion|PyCharm|IntelliJ IDEA|GoLand|DataGrip$$)$'
@@ -67,13 +68,5 @@ yabai -m rule --add app="${JB_Apps}" manage=off
 # If `Open last project when launch` is checked, add this rule. And make sure `always show project path` is also checked.
 yabai -m rule --add app="${JB_Apps}" title=".*\[.*\].*" manage=on
 yabai -m rule --add app="${JB_Apps}" title="^$"  manage=on
-
-# ~/.config/yabai/scripts/padding.sh
-# yabai -m signal --add event=window_created action="~/.config/yabai/scripts/padding.sh"
-# yabai -m signal --add event=window_destroyed action="~/.config/yabai/scripts/padding.sh"
-# yabai -m signal --add event=window_moved action="~/.config/yabai/scripts/padding.sh"
-# yabai -m signal --add event=space_changed action="~/.config/yabai/scripts/padding.sh"
-# yabai -m signal --add event=display_added action="~/.config/yabai/scripts/padding.sh"
-# yabai -m signal --add event=display_removed action="~/.config/yabai/scripts/padding.sh"
 
 echo "yabai configuration loaded.."

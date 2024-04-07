@@ -4,43 +4,7 @@ source "$HOME/.config/sketchybar/icons.sh"
 
 case "$1" in
 "Terminal" | "Warp" | "iTerm2" | "kitty")
-  RESULT=$ICON_TERM
-	if grep -q "btop" <<< $2;
-  then
-	 RESULT=$ICON_CHART
-	fi
-	if grep -q "brew" <<< $2;
-  then
-	 RESULT=$ICON_PACKAGE
-	fi
-	if grep -q "nvim" <<< $2;
-  then
-	 RESULT=$ICON_DEV
-	fi
-	if grep -q "ranger" <<< $2;
-  then
-	 RESULT=$ICON_FILE
-	fi
-	if grep -q "lazygit" <<< $2;
-  then
-	 RESULT=$ICON_GIT
-	fi
-	if grep -q "taskwarrior-tui" <<< $2;
-  then
-	 RESULT=$ICON_LIST
-	fi
-	if grep -q "unimatrix\|pipes.sh" <<< $2;
-  then
-	 RESULT=$ICON_SCREENSAVOR
-	fi
-	if grep -q "bat" <<< $2;
-  then
-	 RESULT=$ICON_NOTE
-	fi
-	if grep -q "tty-clock" <<< $2;
-  then
-	 RESULT=$ICON_CLOCK
-	fi
+    RESULT=$ICON_TERM
 	;;
 "Finder")
 	RESULT=$ICON_FILE
@@ -66,9 +30,18 @@ case "$1" in
 "Voice Memos")
 	RESULT=$ICON_MICROPHONE
 	;;
-"Messages" | "Slack" | "Microsoft Teams" | "Discord" | "Telegram")
+"企业微信")
+    RESULT=$QYWEIXIN
+    ;;
+"Messages" | "Slack" | "Microsoft Teams" | "Discord" | "Telegram" | "WeChat")
 	RESULT=$ICON_CHAT
 	;;
+"Code")
+    RESULT=$ICON_CODE
+    ;;
+"IntelliJ IDEA" | "GoLand" | "DataGrip" | "PyCharm")
+    RESULT=$ICON_DEV
+    ;;
 "FaceTime" | "zoom.us" | "Webex")
 	RESULT=$ICON_VIDEOCHAT
 	;;
@@ -81,6 +54,9 @@ case "$1" in
 "Photo Booth")
 	RESULT=$ICON_CAMERA
 	;;
+"Google Chrome")
+    RESULT=$ICON_CHROME
+    ;;
 "Safari" | "Beam" | "DuckDuckGo" | "Arc" | "Microsoft Edge" | "Google Chrome" | "Firefox" | "Firefox Nightly")
 	RESULT=$ICON_WEB
 	;;
@@ -90,7 +66,7 @@ case "$1" in
 "HOME")
 	RESULT=$ICON_HOMEAUTOMATION
 	;;
-"Music" | "Spotify")
+"Music" | "Spotify" | "网易云音乐")
 	RESULT=$ICON_MUSIC
 	;;
 "Podcasts")
@@ -101,9 +77,6 @@ case "$1" in
 	;;
 "Books")
 	RESULT=$ICON_BOOK
-	;;
-"Xcode" | "Code" | "Neovide" | "GoLand" | "IDEA")
-	RESULT=$ICON_DEV
 	;;
 "Font Book" | "Dictionary")
 	RESULT=$ICON_BOOKINFO
@@ -143,6 +116,9 @@ case "$1" in
 	;;
 "VMware Fusion" | "UTM")
 	RESULT=$ICON_REMOTEDESKTOP
+	;;
+"OrbStack" | "Lens")
+	RESULT=$ICON_DOCKER
 	;;
 *)
 	RESULT=$ICON_APP

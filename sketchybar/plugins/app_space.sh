@@ -44,7 +44,7 @@ then
        fi
      done
    else
-     LABEL+="$ICON_APP"
+     LABEL+=$ICON_BLANK
    fi
  
    sketchybar --set space.$sid label="$LABEL" click_script="yabai -m space --focus $sid"

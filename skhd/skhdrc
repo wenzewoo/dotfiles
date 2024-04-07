@@ -1,4 +1,4 @@
-alt + shift - t : open -n /Applications/Kitty.app
+alt + shift - t : open -n /Applications/iTerm.app
 
 # 创建一个新的空间
 alt - n : yabai -m space --create
