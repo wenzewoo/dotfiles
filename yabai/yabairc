@@ -1,26 +1,17 @@
 #!/usr/bin/env sh
+# brew install yabai
 sudo yabai --load-sa
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 
 # 全局设置
-yabai -m config external_bar all:0:35
+yabai -m config debug_output                 on
+yabai -m config external_bar                 all:0:35
 yabai -m config mouse_follows_focus          off
 yabai -m config focus_follows_mouse          off
-#yabai -m config window_origin_display        default
 yabai -m config window_placement             second_child
-yabai -m config window_topmost               off
 yabai -m config window_shadow                on
-yabai -m config window_opacity               off
-yabai -m config window_opacity_duration      1000.0
-yabai -m config active_window_opacity        1.0
-yabai -m config normal_window_opacity        0.75
-yabai -m config window_border                off
-yabai -m config window_border_width          0
-yabai -m config active_window_border_color   0xff775759
-yabai -m config normal_window_border_color   0xff555555
-yabai -m config insert_feedback_color        0xffd75f5f
+yabai -m config auto_balance                 off
 yabai -m config split_ratio                  0.50
-yabai -m config auto_balance                 on
 yabai -m config mouse_modifier               fn
 yabai -m config mouse_action1                move
 yabai -m config mouse_action2                resize
@@ -34,8 +25,6 @@ yabai -m config left_padding                 5
 yabai -m config right_padding                5
 yabai -m config window_gap                   5
 yabai -m config window_animation_duration    0.00
-
-
 
 # 不受影响的窗口
 yabai -m rule --add app="^系统设置$" manage=off
@@ -62,17 +51,28 @@ yabai -m rule --add app="^iStat Menus$" manage=off
 yabai -m rule --add app="^文本编辑$" manage=off
 yabai -m rule --add app="^爱奇艺$" manage=off
 
-
+# Jetbrains系列APP处理
 JB_Apps='^(CLion|PyCharm|IntelliJ IDEA|GoLand|DataGrip$$)$'
 yabai -m rule --add app="${JB_Apps}" manage=off
-# If `Open last project when launch` is checked, add this rule. And make sure `always show project path` is also checked.
 yabai -m rule --add app="${JB_Apps}" title=".*\[.*\].*" manage=on
 yabai -m rule --add app="${JB_Apps}" title="^$"  manage=on
 
 # 自动管理Space
 yabai -m signal --add event=window_created \
-  action="~/Public/dotfiles/yabai/auto_space.sh"
+  action="~/.config/yabai/auto_space.sh"
 yabai -m signal --add event=window_destroyed \
-  action="~/Public/dotfiles/yabai/auto_space.sh"
+  action="~/.config/yabai/auto_space.sh"
+yabai -m signal --add event=space_changed \
+  action="~/.config/yabai/auto_space.sh"
+
+# brew install borders
+border_options=(
+	style=round
+	width=2.0
+	hidpi=on
+	active_color=0xffe2e2e3
+	inactive_color=0xff414550
+)
+borders "${border_options[@]}"
 
 echo "yabai configuration loaded.."

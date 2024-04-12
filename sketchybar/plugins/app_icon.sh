@@ -3,7 +3,7 @@
 source "$HOME/.config/sketchybar/icons.sh"
 
 case "$1" in
-"Terminal" | "Warp" | "iTerm2" | "kitty")
+"Terminal" | "Warp" | "iTerm2" | "kitty" | "终端")
     RESULT=$ICON_TERM
 	;;
 "Finder")
