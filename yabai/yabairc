@@ -69,4 +69,10 @@ yabai -m rule --add app="${JB_Apps}" manage=off
 yabai -m rule --add app="${JB_Apps}" title=".*\[.*\].*" manage=on
 yabai -m rule --add app="${JB_Apps}" title="^$"  manage=on
 
+# 自动管理Space
+yabai -m signal --add event=window_created \
+  action="~/Public/dotfiles/yabai/auto_space.sh"
+yabai -m signal --add event=window_destroyed \
+  action="~/Public/dotfiles/yabai/auto_space.sh"
+
 echo "yabai configuration loaded.."
