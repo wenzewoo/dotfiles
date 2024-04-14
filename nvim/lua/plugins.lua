@@ -66,8 +66,6 @@ require("lazy").setup({
 		"L3MON4D3/LuaSnip",
 		version = "v2.*",
 	},
-	-- Colorscheme
-	"Mofiqul/vscode.nvim",
 	-- Better UI
     -- Run `:checkhealth noice` to check for common issues
 	{

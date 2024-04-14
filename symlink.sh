@@ -22,9 +22,8 @@ create_symlink "${HOME}/Public/dotfiles/sketchybar" "${HOME}/.config/sketchybar"
 
 # Terminal
 create_symlink "${HOME}/Public/dotfiles/zsh/zshrc" "${HOME}/.zshrc"
-create_symlink "${HOME}/Public/dotfiles/neofetch" "${HOME}/.config/neofetch"
-create_symlink "${HOME}/Public/dotfiles/kitty" "${HOME}/.config/kitty"
 create_symlink "${HOME}/Public/dotfiles/nvim" "${HOME}/.config/nvim"
+create_symlink "${HOME}/Public/dotfiles/alacritty" "${HOME}/.config/alacritty"
 
 
 # Private
