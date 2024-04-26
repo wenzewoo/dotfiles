@@ -1,0 +1,45 @@
+[options]
+    colorscheme = "gruvbox"
+    # 背景可以取值 "dark" 或 "light"
+    colorscheme_bg = "dark"
+    # 是否开启真彩显示
+    enable_guicolors = false
+    # 设置状符号，默认为箭头 "arrow"
+    statusline_separator = "arrow"
+    statusline_iseparator = "bar"
+    # 设置顶部标签列表序号类型，有以下五种类型，分别是 0 - 4
+    buffer_index_type = 2
+    # 显示/隐藏顶部标签栏上的文件类型图标，这一图标需要安装 nerd fonts，
+    # 如果未能成功安装这一字体，可以隐藏图标
+    enable_tabline_filetype_icon = true
+    # 是否在状态栏上显示当前模式，默认情况下，不显示 Normal/Insert 等
+    enable_statusline_mode = true
+    # 文件树位置
+    filetree_direction = "left"
+
+# SpaceVim 模块设置，主要包括启用/禁用模块
+
+# 启用 autocomplete 模块，启用模块时，可以列出一些模块选项，并赋值，
+# 关于模块的选项，请阅读各个模块的文档
+[[layers]]
+    name = "autocomplete"
+    auto-completion-return-key-behavior = "complete"
+    auto-completion-tab-key-behavior = "cycle"
+
+# 禁用 shell 模块，禁用模块时，需要加入 enable = false
+[[layers]]
+    name = "shell"
+    enable = false
+
+[[layers]]
+    name = "lang#go"
+
+# 添加自定义插件 lilydjwg/colorizer
+[[custom_plugins]]
+    repo = "lilydjwg/colorizer"
+    merged = false
+
+# 添加自定义插件 junegunn/vader.vim
+[[custom_plugins]]
+    repo = "junegunn/vader.vim"
+    merged = false

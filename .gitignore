@@ -2,3 +2,4 @@
 /.idea/
 /mvn/settings-oray.xml
 .DS_Store
+/ossutil/

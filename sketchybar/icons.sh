@@ -67,7 +67,6 @@ export ICON_COG=󰒓 # system settings, system information, tinkertool
 export ICON_CHART=󱕍 # activity monitor, btop
 export ICON_LOCK=󰌾
 
-# export ICONS_SPACE=(󰎤 󰎧 󰎪 󰎭 󰎱 󰎳 󰎶)
 export ICONS_SPACE=(1 2 3 4 5 6 7 8 9 10)
 
 export ICON_BLANK=󰢤
@@ -87,7 +86,7 @@ export ICON_MAIL=󰇮 # mail, outlook
 export ICON_CALC=󰪚 # calculator, numi
 export ICON_MAP=󰆋 # maps, find my
 export ICON_MICROPHONE=󰍬 # voice memos
-export QYWEIXIN=󱐒
+export ICON_QYWEIXIN=󱐒
 export ICON_CHAT=󰍩 # messages, slack, teams, discord, telegram
 export ICON_VIDEOCHAT=󰍫 # facetime, zoom, webex
 export ICON_NOTE=󱞎 # notes, textedit, stickies, word, bat
@@ -109,6 +108,15 @@ export ICON_CLOUD=󰅧 # onedrive
 export ICON_PEN=󰏬 # curve
 export ICON_REMOTEDESKTOP=󰢹 # vmware, utm
 export ICON_CHROME=󰊯
+export ICON_MAN=󰙃
+export ICON_NETWORK=󰛵
+export ICON_WEIXIN=󰘑
+export ICON_IDE_IntelliJ=󰚗
+export ICON_IDE_GoLand=󰅨
+export ICON_IDE_DataGrip=󰅨
+export ICON_IDE_PyCharm=󰅨
+
+
 
 export ICON_CLOCK= # clock, timewarrior, tty-clock
 export ICON_CALENDAR=󰃭 # calendar

@@ -15,15 +15,14 @@ create_symlink() {
 }
 
 
-# Windows
-create_symlink "${HOME}/Public/dotfiles/skhd" "${HOME}/.config/skhd"
-create_symlink "${HOME}/Public/dotfiles/yabai" "${HOME}/.config/yabai"
+# Window
 create_symlink "${HOME}/Public/dotfiles/sketchybar" "${HOME}/.config/sketchybar"
+create_symlink "${HOME}/Public/dotfiles/aerospace" "${HOME}/.config/aerospace"
 
 # Terminal
 create_symlink "${HOME}/Public/dotfiles/zsh/zshrc" "${HOME}/.zshrc"
-create_symlink "${HOME}/Public/dotfiles/nvim" "${HOME}/.config/nvim"
-create_symlink "${HOME}/Public/dotfiles/alacritty" "${HOME}/.config/alacritty"
+create_symlink "${HOME}/Public/dotfiles/kitty" "${HOME}/.config/kitty"
+create_symlink "${HOME}/Public/dotfiles/spacevim" "${HOME}/.SpaceVim.d"
 
 
 # Private

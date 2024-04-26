@@ -1,0 +1,169 @@
+start-at-login = true
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
+
+default-root-container-layout = 'tiles'
+default-root-container-orientation = 'auto'
+indent-for-nested-containers-with-the-same-orientation = 30
+
+
+after-startup-command = [
+    # 'exec-and-forget /opt/homebrew/opt/sketchybar/bin/sketchybar'
+]
+
+# Notify Sketchybar about workspace change
+exec-on-workspace-change = ['/bin/bash', '-c',
+    '/opt/homebrew/opt/sketchybar/bin/sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
+]
+
+[gaps]
+inner.horizontal = 5
+inner.vertical =   5
+outer.left =       5
+outer.bottom =     40
+outer.top =        5
+outer.right =      5
+
+[mode.main.binding]
+cmd-tab = []
+
+alt-h = 'focus left'
+alt-j = 'focus down'
+alt-k = 'focus up'
+alt-l = 'focus right'
+cmd-h = 'move left'
+cmd-j = 'move down'
+cmd-k = 'move up'
+cmd-l = 'move right'
+
+alt-shift-h = 'resize width +50'
+alt-shift-j = 'resize height +50'
+alt-shift-k = 'resize height -50'
+alt-shift-l = 'resize width -50'
+
+alt-s = 'layout v_accordion' # 'layout stacking' in i3
+alt-w = 'layout h_accordion' # 'layout tabbed' in i3
+alt-e = 'layout tiles horizontal vertical' # 'layout toggle split' in i3
+
+alt-f = 'fullscreen'
+alt-shift-f = 'macos-native-fullscreen'
+alt-shift-space = 'layout floating tiling' # 'floating toggle' in i3
+
+
+alt-1 = 'workspace 1'
+alt-2 = 'workspace 2'
+alt-3 = 'workspace 3'
+alt-4 = 'workspace 4'
+alt-5 = 'workspace 5'
+alt-6 = 'workspace 6'
+alt-shift-left = 'workspace prev'
+alt-shift-right = 'workspace next'
+alt-tab = 'workspace-back-and-forth'
+
+alt-shift-1 = ['move-node-to-workspace 1', 'workspace 1']
+alt-shift-2 = ['move-node-to-workspace 2', 'workspace 2']
+alt-shift-3 = ['move-node-to-workspace 3', 'workspace 3']
+alt-shift-4 = ['move-node-to-workspace 4', 'workspace 4']
+alt-shift-5 = ['move-node-to-workspace 5', 'workspace 5']
+alt-shift-6 = ['move-node-to-workspace 6', 'workspace 6']
+
+alt-shift-c = 'reload-config'
+
+[workspace-to-monitor-force-assignment]
+'1' = 'main'                       
+'2' = 'main'                       
+'3' = 'main'                       
+'4' = 'secondary'                  
+'5' = 'secondary'                  
+'6' = 'secondary'                   
+
+# aerospace list-apps
+# https://nikitabobko.github.io/AeroSpace/guide#on-window-detected-callback
+[[on-window-detected]]
+if.app-id = 'com.apple.calculator'
+run = ['layout floating']
+
+[[on-window-detected]]
+if.app-id = 'org.yuanli.utools'
+run = ['layout floating']
+
+[[on-window-detected]]
+if.app-id = 'com.apple.systempreferences'
+run = ['layout floating']
+
+[[on-window-detected]]
+if.app-id = 'com.apple.finder'
+run = ['layout floating']
+
+[[on-window-detected]]
+if.app-id = 'com.apple.iCal'
+run = ['layout floating']
+
+[[on-window-detected]]
+if.app-id = 'com.oray.pgy.visitorent'
+run = ['layout floating']
+
+[[on-window-detected]]
+if.app-id = 'com.NeilSardesai.Step-Two-Mac'
+run = ['layout floating']
+
+[[on-window-detected]]
+if.app-id = 'com.tencent.xinWeChat'
+run = ['layout floating', 'move-node-to-workspace 5']
+
+[[on-window-detected]]
+if.app-id = 'com.tencent.WeWorkMac'
+run = ['layout floating', 'move-node-to-workspace 5']
+
+[[on-window-detected]]
+if.app-id = 'com.netease.163music'
+run = ['layout floating', 'move-node-to-workspace 6']
+
+[[on-window-detected]]
+if.app-id = 'com.jetbrains.intellij'
+if.window-title-regex-substring = 'Welcome.*'
+run = ['layout floating', 'move-node-to-workspace 1']
+
+[[on-window-detected]]
+if.app-id = 'com.jetbrains.goland'
+if.window-title-regex-substring = 'Welcome.*'
+run = ['layout floating', 'move-node-to-workspace 1']
+
+[[on-window-detected]]
+if.app-id = 'com.microsoft.VSCode'
+run = ['move-node-to-workspace 1']
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Terminal'
+run = ['move-node-to-workspace 2']
+
+[[on-window-detected]]
+if.app-id = 'net.kovidgoyal.kitty'
+run = ['move-node-to-workspace 2']
+
+[[on-window-detected]]
+if.app-id = 'com.google.Chrome'
+run = ['move-node-to-workspace 4']
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Safari'
+run = ['move-node-to-workspace 4']
+
+[[on-window-detected]]
+if.app-id = 'md.obsidian'
+run = ['move-node-to-workspace 3']
+
+[[on-window-detected]]
+if.app-id = 'com.kingsoft.wpsoffice.mac'
+run = ['move-node-to-workspace 3']
+
+
+
+[[on-window-detected]]
+if.window-title-regex-substring = '(设置|画中画|QuickTime Player)'
+run = 'layout floating'
+
+
+
+
+
