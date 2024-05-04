@@ -1,0 +1,91 @@
+#!/usr/bin/env sh
+sudo yabai --load-sa
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+
+# 全局设置
+# yabai -m config debug_output                 on
+yabai -m config external_bar                 all:0:35
+yabai -m config mouse_follows_focus          off
+yabai -m config focus_follows_mouse          off
+yabai -m config window_origin_display        default
+yabai -m config window_placement             second_child
+yabai -m config window_topmost               off
+yabai -m config window_shadow                on
+yabai -m config window_opacity               off
+yabai -m config window_opacity_duration      2000.0
+yabai -m config active_window_opacity        1.0
+yabai -m config normal_window_opacity        0.85
+yabai -m config insert_feedback_color        0xffd75f5f
+yabai -m config split_ratio                  0.50
+yabai -m config auto_balance                 off
+yabai -m config mouse_modifier               fn
+yabai -m config mouse_action1                move
+yabai -m config mouse_action2                resize
+yabai -m config mouse_drop_action            swap
+
+# 全局空间设置
+yabai -m config layout                       bsp
+yabai -m config top_padding                  5
+yabai -m config bottom_padding               5
+yabai -m config left_padding                 5
+yabai -m config right_padding                5
+yabai -m config window_gap                   5
+
+# 预设Space: 1 DEV, 2 TERM, 3 DOC 4 WEB 5 CHAT 6 OTHER
+function space_create {
+	if [ -z $(yabai -m query --spaces index | jq "first(.[] | select(.index == $2) | .index)") ]; then
+		yabai -m space --create
+	fi
+	yabai -m space $2 --display $1 --label $3
+}
+for idx in $(yabai -m query --spaces index | jq ".[].index | select(. > 6)" | sort -nr); do
+    yabai -m space --destroy "$idx"
+done
+space_create 1 1 dev
+space_create 1 2 term
+space_create 1 3 doc
+space_create 2 4 web
+space_create 2 5 chat
+space_create 2 6 other
+
+# 应用窗口规则
+IFS='|'
+# 默认浮动窗口的应用
+floatingApps=(
+    "系统设置" "访达" "微信" "企业微信" "Mac Mouse Fix" "Step Two" "日历" 
+    "Tencent Lemon" "网易云音乐" "计算器" "Clash Verge" "QuickTime Player" 
+    "贝锐向日葵" "贝锐蒲公英" "花生壳" "字体册" "Keka" "归档实用工具" "便笺" 
+    "OrbStack" "uTools" "iStat Menus" "文本编辑" "爱奇艺" 
+    "CLion" "PyCharm" "IntelliJ IDEA" "GoLand" "DataGrip"
+)
+yabai -m rule --add app="^(${floatingApps[*]})$" manage=off
+
+# IDEA窗口平铺规则
+jetbrainsApps=("CLion" "PyCharm" "IntelliJ IDEA" "GoLand" "DataGrip")
+# yabai -m rule --add app="^(${jetbrainsApps[*]})$" title="^$" manage=on
+yabai -m rule --add app="^(${jetbrainsApps[*]})$" title=".*\[.*\].*–.*" manage=on
+yabai -m signal --add event=window_title_changed app="^(${jetbrainsApps[*]})$" \
+    action="yabai -m rule --apply app=\"^(${jetbrainsApps[*]})$\" title=\".*\[.*\].*–.*\" manage=on"
+    
+
+# 应用自动分区
+space1Apps=("${jetbrainsApps[*]}" "Code")
+yabai -m rule --add app="^(${space1Apps[*]})$" space=^1
+
+space2Apps=("Terminal" "终端" "iTerm2" "Kitty" "Termius")
+yabai -m rule --add app="^(${space2Apps[*]})$" space=^2
+
+space3Apps=("WPS Office" "Obsidian" "Proxyman")
+yabai -m rule --add app="^(${space3Apps[*]})$" space=^3
+
+space4Apps=("Google Chrome" "Safari浏览器" "Postman")
+yabai -m rule --add app="^(${space4Apps[*]})$" space=^4
+
+space5Apps=("企业微信" "微信" "WeChat" "钉钉" "DingTalk" "飞书")
+yabai -m rule --add app="^(${space5Apps[*]})$" space=^5
+
+space6Apps=("网易云音乐" "OrbStack" "贝锐蒲公英" "Clash Verge" "NeteaseMusic")
+yabai -m rule --add app="^(${space6Apps[*]})$" space=^6
+yabai -m rule --apply
+
+echo "yabai configuration loaded.."

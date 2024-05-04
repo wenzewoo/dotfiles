@@ -67,7 +67,10 @@ export ICON_COG=󰒓 # system settings, system information, tinkertool
 export ICON_CHART=󱕍 # activity monitor, btop
 export ICON_LOCK=󰌾
 
+# 1 DEV, 2 TERM, 3 DOC 4 WEB 5 CHAT 6 OTHER
 export ICONS_SPACE=(1 2 3 4 5 6 7 8 9 10)
+export LABELS_SPACE=("󰅨" "󰆍" "󰷈" "󰊯" "󱐒" "󰄷" "󰄷" "󰄷" "󰄷" "󰄷" "󰄷" "󰄷")
+export COLORS_SPACE=($GREEN $CYAN $BLUE $ORANGE $LIGHT_BLUE $MAGENTA $GREY $GREY $GREY $GREY)
 
 export ICON_BLANK=󰢤
 export ICON_APP=󰣆 # fallback app

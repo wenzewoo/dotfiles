@@ -67,9 +67,8 @@ sketchybar --default "${defaults[@]}"
 
 # Left
 source "$ITEM_DIR/apple.sh"
-# 延迟1.5秒再出现space，因为aerospace可能还没初始化完成
-sleep 1.5
-source "$ITEM_DIR/aerospace.sh"
+# source "$ITEM_DIR/aerospace.sh"
+source "$ITEM_DIR/yabaispace.sh"
 
 # Center
 source "$ITEM_DIR/media.sh"

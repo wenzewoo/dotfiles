@@ -1,6 +1,7 @@
 #!/bin/bash
 
-export BLACK=0xff2e3440
+# export BLACK=0xff2e3440
+export BLACK=0xff323234
 export WHITE=0xffd8dee9
 export RED=0xffbf616a
 export GREEN=0xffa3be8c
@@ -20,9 +21,10 @@ export BAR_COLOR=0xbf2e3440
 export BAR_BORDER_COLOR=0xff494d64 #0xa024273a
 export ICON_COLOR=$WHITE # Color of all icons
 export LABEL_COLOR=$WHITE # Color of all labels
-export BACKGROUND_1=0xd42e3440
-# export BACKGROUND_2=0x852e3440
-export BACKGROUND_2=0xa32e3440
+# export BACKGROUND_1=0xd42e3440
+# export BACKGROUND_2=0xa32e3440
+export BACKGROUND_1=0xd4202020
+export BACKGROUND_2=0xa3202020
 
 
 export POPUP_BACKGROUND_COLOR=0xc22e3440

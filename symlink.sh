@@ -18,7 +18,8 @@ create_symlink() {
 # Window
 create_symlink "${HOME}/Public/dotfiles/sketchybar" "${HOME}/.config/sketchybar"
 create_symlink "${HOME}/Public/dotfiles/aerospace" "${HOME}/.config/aerospace"
-
+create_symlink "${HOME}/Public/dotfiles/yabai" "${HOME}/.config/yabai"
+create_symlink "${HOME}/Public/dotfiles/skhd" "${HOME}/.config/skhd"
 # Terminal
 create_symlink "${HOME}/Public/dotfiles/zsh/zshrc" "${HOME}/.zshrc"
 create_symlink "${HOME}/Public/dotfiles/kitty" "${HOME}/.config/kitty"
