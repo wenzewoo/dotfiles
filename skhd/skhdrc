@@ -2,7 +2,6 @@
 alt - n : yabai -m space --create
 alt - d : yabai -m space --destroy
 
-
 # 切换空间焦点
 alt - 1 : yabai -m space --focus 1
 alt - 2 : yabai -m space --focus 2
@@ -16,6 +15,7 @@ alt - 9 : yabai -m space --focus 9
 alt - 0 : yabai -m space --focus 10
 alt + shift - left : yabai -m space --focus prev || yabai -m space --focus last 
 alt + shift - right : yabai -m space --focus next || yabai -m space --focus first
+
 # 发送窗口到其他空间
 alt + shift - 1 : yabai -m window --space 1;yabai -m space --focus 1
 alt + shift - 2 : yabai -m window --space 2;yabai -m space --focus 2
@@ -58,3 +58,6 @@ alt + shift - f      : yabai -m window --toggle native-fullscreen # 切换全屏
 alt - r              : yabai -m space --rotate 90                 # 旋转布局
 alt + shift - space  : yabai -m window --toggle float             # 切换浮动
 alt + shift - b      : yabai -m space --balance                   # 水平分割
+
+# 重启YABAI服务
+alt + shift - r        : yabai --restart-service; yabai -m rule --apply
